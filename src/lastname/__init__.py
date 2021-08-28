@@ -51,6 +51,9 @@ class LastName:
             return None
 
         row = list(row)
+        cols = [col[0] for col in c.description]
 
-        return {col[0]: row.pop(0) for col in c.description}
+        c.close()
+
+        return {col: row.pop(0) for col in cols}
 
